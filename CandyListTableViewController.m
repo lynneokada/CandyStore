@@ -8,6 +8,7 @@
 
 #import "CandyListTableViewController.h"
 #import "CandyViewController.h"
+#import "AddCandyViewController.h"
 #import "Candy.h"
 
 @interface CandyListTableViewController ()
@@ -68,9 +69,16 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    CandyViewController *candyViewController = [segue destinationViewController];
-    NSIndexPath *selectedIndexPath = self.tableView.indexPathForSelectedRow;
-    candyViewController.candy = self.candyList[selectedIndexPath.row];
+    if ([segue.identifier isEqualToString:@"showCandy"]) {
+        CandyViewController *candyViewController = [segue destinationViewController];
+        NSIndexPath *selectedIndexPath = self.tableView.indexPathForSelectedRow;
+        candyViewController.candy = self.candyList[selectedIndexPath.row];
+    } else if ([segue.identifier isEqualToString:@"addCandy"]) {
+        Candy *candy = [Candy new];
+        [self.candyList addObject:candy];
+        AddCandyViewController *addCandyViewController = [segue destinationViewController];
+        addCandyViewController.candy = candy;
+    }
 }
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
