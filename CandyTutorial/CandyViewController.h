@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  CandyViewController.h
 //  CandyTutorial
 //
 //  Created by Lynne Okada on 9/16/14.
@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@class Candy;
 
+@interface CandyViewController : UIViewController
+
+@property (nonatomic, strong) Candy *candy;
 
 @end
-

@@ -10,11 +10,13 @@
 		D2EB52D619C8E84500C4FFE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB52D519C8E84500C4FFE4 /* main.m */; };
 		D2EB52D919C8E84500C4FFE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB52D819C8E84500C4FFE4 /* AppDelegate.m */; };
 		D2EB52DC19C8E84500C4FFE4 /* CandyTutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2EB52DA19C8E84500C4FFE4 /* CandyTutorial.xcdatamodeld */; };
-		D2EB52DF19C8E84500C4FFE4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB52DE19C8E84500C4FFE4 /* ViewController.m */; };
 		D2EB52E219C8E84500C4FFE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2EB52E019C8E84500C4FFE4 /* Main.storyboard */; };
 		D2EB52E419C8E84500C4FFE4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2EB52E319C8E84500C4FFE4 /* Images.xcassets */; };
 		D2EB52E719C8E84500C4FFE4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2EB52E519C8E84500C4FFE4 /* LaunchScreen.xib */; };
 		D2EB52F319C8E84500C4FFE4 /* CandyTutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB52F219C8E84500C4FFE4 /* CandyTutorialTests.m */; };
+		D2EB52FE19C8E95400C4FFE4 /* CandyListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB52FD19C8E95400C4FFE4 /* CandyListTableViewController.m */; };
+		D2EB530119C8EF0200C4FFE4 /* Candy.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB530019C8EF0200C4FFE4 /* Candy.m */; };
+		D2EB530419C8F57C00C4FFE4 /* CandyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB530319C8F57C00C4FFE4 /* CandyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +36,18 @@
 		D2EB52D719C8E84500C4FFE4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D2EB52D819C8E84500C4FFE4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D2EB52DB19C8E84500C4FFE4 /* CandyTutorial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CandyTutorial.xcdatamodel; sourceTree = "<group>"; };
-		D2EB52DD19C8E84500C4FFE4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		D2EB52DE19C8E84500C4FFE4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D2EB52E119C8E84500C4FFE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2EB52E319C8E84500C4FFE4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D2EB52E619C8E84500C4FFE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D2EB52EC19C8E84500C4FFE4 /* CandyTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CandyTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EB52F119C8E84500C4FFE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2EB52F219C8E84500C4FFE4 /* CandyTutorialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CandyTutorialTests.m; sourceTree = "<group>"; };
+		D2EB52FC19C8E95400C4FFE4 /* CandyListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CandyListTableViewController.h; path = ../CandyListTableViewController.h; sourceTree = "<group>"; };
+		D2EB52FD19C8E95400C4FFE4 /* CandyListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CandyListTableViewController.m; path = ../CandyListTableViewController.m; sourceTree = "<group>"; };
+		D2EB52FF19C8EF0200C4FFE4 /* Candy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Candy.h; path = ../Candy.h; sourceTree = "<group>"; };
+		D2EB530019C8EF0200C4FFE4 /* Candy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Candy.m; path = ../Candy.m; sourceTree = "<group>"; };
+		D2EB530219C8F57C00C4FFE4 /* CandyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyViewController.h; sourceTree = "<group>"; };
+		D2EB530319C8F57C00C4FFE4 /* CandyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +91,12 @@
 			children = (
 				D2EB52D719C8E84500C4FFE4 /* AppDelegate.h */,
 				D2EB52D819C8E84500C4FFE4 /* AppDelegate.m */,
-				D2EB52DD19C8E84500C4FFE4 /* ViewController.h */,
-				D2EB52DE19C8E84500C4FFE4 /* ViewController.m */,
+				D2EB52FC19C8E95400C4FFE4 /* CandyListTableViewController.h */,
+				D2EB52FD19C8E95400C4FFE4 /* CandyListTableViewController.m */,
+				D2EB530219C8F57C00C4FFE4 /* CandyViewController.h */,
+				D2EB530319C8F57C00C4FFE4 /* CandyViewController.m */,
+				D2EB52FF19C8EF0200C4FFE4 /* Candy.h */,
+				D2EB530019C8EF0200C4FFE4 /* Candy.m */,
 				D2EB52E019C8E84500C4FFE4 /* Main.storyboard */,
 				D2EB52E319C8E84500C4FFE4 /* Images.xcassets */,
 				D2EB52E519C8E84500C4FFE4 /* LaunchScreen.xib */,
@@ -222,10 +232,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2EB530419C8F57C00C4FFE4 /* CandyViewController.m in Sources */,
 				D2EB52D919C8E84500C4FFE4 /* AppDelegate.m in Sources */,
 				D2EB52D619C8E84500C4FFE4 /* main.m in Sources */,
-				D2EB52DF19C8E84500C4FFE4 /* ViewController.m in Sources */,
 				D2EB52DC19C8E84500C4FFE4 /* CandyTutorial.xcdatamodeld in Sources */,
+				D2EB530119C8EF0200C4FFE4 /* Candy.m in Sources */,
+				D2EB52FE19C8E95400C4FFE4 /* CandyListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
