@@ -7,8 +7,13 @@
 //
 
 #import "AddCandyViewController.h"
+#import "CandyViewController.h"
+#import "CandyListTableViewController.h"
+#import "AddLocationViewController.h"
+#import "Candy.h"
 
 @interface AddCandyViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *candyNameTextField;
 
 @end
 
@@ -24,6 +29,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"addCandyConfirmed"]) {
+        CandyViewController* candyViewController = [segue destinationViewController];
+        candyViewController.candy = 
+//    } else if ([segue.identifier isEqualToString:@"addLocation]) {
+//        AddLocationViewController *addLocationViewController = [segue destinationViewController];
+//        addLocationViewController.candy = self.candyList[-1];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.candyNameTextField.text = self.candy.candyName;
+}
 /*
 #pragma mark - Navigation
 

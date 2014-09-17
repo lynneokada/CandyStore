@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D2178DB519CA024A00D29C63 /* AddLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2178DB419CA024A00D29C63 /* AddLocationViewController.m */; };
 		D2EB52D619C8E84500C4FFE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB52D519C8E84500C4FFE4 /* main.m */; };
 		D2EB52D919C8E84500C4FFE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB52D819C8E84500C4FFE4 /* AppDelegate.m */; };
 		D2EB52DC19C8E84500C4FFE4 /* CandyTutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2EB52DA19C8E84500C4FFE4 /* CandyTutorial.xcdatamodeld */; };
@@ -31,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D2178DB319CA024A00D29C63 /* AddLocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddLocationViewController.h; sourceTree = "<group>"; };
+		D2178DB419CA024A00D29C63 /* AddLocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddLocationViewController.m; sourceTree = "<group>"; };
 		D2EB52D019C8E84500C4FFE4 /* CandyTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EB52D419C8E84500C4FFE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2EB52D519C8E84500C4FFE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -100,6 +103,8 @@
 				D2EB530319C8F57C00C4FFE4 /* CandyViewController.m */,
 				D2EB530519C8FBE500C4FFE4 /* AddCandyViewController.h */,
 				D2EB530619C8FBE500C4FFE4 /* AddCandyViewController.m */,
+				D2178DB319CA024A00D29C63 /* AddLocationViewController.h */,
+				D2178DB419CA024A00D29C63 /* AddLocationViewController.m */,
 				D2EB52FF19C8EF0200C4FFE4 /* Candy.h */,
 				D2EB530019C8EF0200C4FFE4 /* Candy.m */,
 				D2EB52E019C8E84500C4FFE4 /* Main.storyboard */,
@@ -244,6 +249,7 @@
 				D2EB530119C8EF0200C4FFE4 /* Candy.m in Sources */,
 				D2EB530719C8FBE500C4FFE4 /* AddCandyViewController.m in Sources */,
 				D2EB52FE19C8E95400C4FFE4 /* CandyListTableViewController.m in Sources */,
+				D2178DB519CA024A00D29C63 /* AddLocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,6 +440,7 @@
 				D2EB52F819C8E84500C4FFE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2EB52F919C8E84500C4FFE4 /* Build configuration list for PBXNativeTarget "CandyTutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +449,7 @@
 				D2EB52FB19C8E84500C4FFE4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
