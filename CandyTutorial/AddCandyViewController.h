@@ -10,7 +10,15 @@
 
 @class Candy;
 
-@interface AddCandyViewController : UIViewController
+@interface AddCandyViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+    UIImagePickerController *photo1;
+    UIImagePickerController *photo2;
+    UIImage *image;
+    IBOutlet UIImageView *imageView;
+}
+
+- (IBAction)TakePhoto;
+- (IBAction)ChooseExisting;
 
 @property (nonatomic, strong) Candy *candy;
 

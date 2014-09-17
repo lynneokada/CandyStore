@@ -7,8 +7,10 @@
 //
 
 #import "CandyViewController.h"
+#import "Candy.h"
 
 @interface CandyViewController ()
+@property (weak, nonatomic) IBOutlet UITextField *candyNameTextField;
 
 @end
 
@@ -24,6 +26,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showLocation"]) {
+        
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.candyNameTextField.text = self.candy.candyName;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    self.candy.candyName = self.candyNameTextField.text;
+}
 /*
 #pragma mark - Navigation
 

@@ -8,6 +8,7 @@
 
 #import "AddLocationViewController.h"
 
+
 @interface AddLocationViewController ()
 
 @end
@@ -17,6 +18,21 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.currentLocation.delegate = self;
+    [self.currentLocation setShowsUserLocation:YES];
+}
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    //get coordinates
+    CLLocationCoordinate2D showCurrentLocation = [userLocation coordinate];
+    //zoom area
+    MKCoordinateRegion zoomArea = MKCoordinateRegionMakeWithDistance(showCurrentLocation, 2000, 2000);
+    //show location
+    [self.currentLocation setRegion:zoomArea animated:YES];
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
+    return (toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
 - (void)didReceiveMemoryWarning {

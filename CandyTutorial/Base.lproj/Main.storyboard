@@ -53,8 +53,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Candy Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yf7-F7-awa">
+                                <rect key="frame" x="86" y="373" width="137.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e89-1j-f35">
-                                <rect key="frame" x="200" y="116" width="200" height="200"/>
+                                <rect key="frame" x="200" y="67" width="200" height="200"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="8uO-1w-uP2"/>
@@ -86,16 +92,30 @@
                                     <segue destination="dES-WA-PLW" kind="show" identifier="addLocation" id="RhC-Qz-bmS"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Candy Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yf7-F7-awa">
-                                <rect key="frame" x="86" y="373" width="137.5" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxL-zV-TAb">
+                                <rect key="frame" x="323" y="298" width="143" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Choose Existing">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="ChooseExisting" destination="jxA-jW-ffm" eventType="touchUpInside" id="2na-hH-cdq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HL-9G-Q9W">
+                                <rect key="frame" x="161" y="298" width="99" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Take Photo">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="TakePhoto" destination="jxA-jW-ffm" eventType="touchUpInside" id="mM6-T9-o4e"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Yf7-F7-awa" firstAttribute="top" secondItem="e89-1j-f35" secondAttribute="bottom" constant="57" id="3UE-AF-yCb"/>
+                            <constraint firstItem="uxL-zV-TAb" firstAttribute="top" secondItem="e89-1j-f35" secondAttribute="bottom" constant="31" id="0uT-LV-Dvn"/>
                             <constraint firstItem="Yf7-F7-awa" firstAttribute="top" secondItem="e89-1j-f35" secondAttribute="bottom" constant="57" id="5Mw-fE-Dpw"/>
                             <constraint firstItem="keK-oR-d3R" firstAttribute="leading" secondItem="xFE-2D-6ny" secondAttribute="leadingMargin" constant="203" id="BpY-go-AXK"/>
                             <constraint firstItem="keK-oR-d3R" firstAttribute="top" secondItem="Yf7-F7-awa" secondAttribute="bottom" constant="37.5" id="CxV-fl-qXk"/>
@@ -111,16 +131,17 @@
                             <constraint firstItem="Yf7-F7-awa" firstAttribute="leading" secondItem="xFE-2D-6ny" secondAttribute="leadingMargin" constant="70" id="YKS-km-KdB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="keK-oR-d3R" secondAttribute="trailing" constant="203" id="ZhK-pV-3UP"/>
                             <constraint firstAttribute="centerY" secondItem="keK-oR-d3R" secondAttribute="centerY" constant="-160" id="aXN-Tz-T7G"/>
-                            <constraint firstAttribute="centerX" secondItem="e89-1j-f35" secondAttribute="centerX" id="e1T-BU-RR9"/>
+                            <constraint firstAttribute="centerX" secondItem="e89-1j-f35" secondAttribute="centerX" id="dV9-3K-wZD"/>
+                            <constraint firstAttribute="centerY" secondItem="e89-1j-f35" secondAttribute="centerY" constant="133" id="gVV-75-kJc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hVV-jd-6j9" secondAttribute="trailing" constant="63" id="gg4-rW-wAe"/>
                             <constraint firstItem="Yf7-F7-awa" firstAttribute="leading" secondItem="xFE-2D-6ny" secondAttribute="leadingMargin" constant="70" id="hhF-Eb-k9D"/>
-                            <constraint firstItem="hVV-jd-6j9" firstAttribute="top" secondItem="e89-1j-f35" secondAttribute="bottom" constant="57" id="hoE-1e-7mU"/>
+                            <constraint firstItem="uxL-zV-TAb" firstAttribute="leading" secondItem="0HL-9G-Q9W" secondAttribute="trailing" constant="63" id="iGE-bl-hZx"/>
                             <constraint firstItem="ayd-pk-Qjg" firstAttribute="top" secondItem="keK-oR-d3R" secondAttribute="bottom" constant="41" id="jQA-Ob-kbB"/>
                             <constraint firstItem="hVV-jd-6j9" firstAttribute="leading" secondItem="Yf7-F7-awa" secondAttribute="trailing" constant="25" id="kg6-vw-g47"/>
                             <constraint firstItem="keK-oR-d3R" firstAttribute="top" secondItem="hVV-jd-6j9" secondAttribute="bottom" constant="36.5" id="mhH-fL-1iP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hVV-jd-6j9" secondAttribute="trailing" constant="63" id="moq-Ta-66p"/>
+                            <constraint firstItem="0HL-9G-Q9W" firstAttribute="top" secondItem="e89-1j-f35" secondAttribute="bottom" constant="31" id="pCf-53-nLv"/>
                             <constraint firstAttribute="centerX" secondItem="keK-oR-d3R" secondAttribute="centerX" id="qUl-Cg-7z0"/>
-                            <constraint firstAttribute="centerY" secondItem="e89-1j-f35" secondAttribute="centerY" constant="84" id="xzQ-9h-vGS"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -141,6 +162,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="candyNameTextField" destination="hVV-jd-6j9" id="rHh-oC-wfV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxA-jW-ffm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,29 +182,46 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sze-gy-BoP">
-                                <rect key="frame" x="178" y="178" width="244" height="244"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sze-gy-BoP">
+                                <rect key="frame" x="175" y="175" width="250" height="250"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Iyh-Gz-3Wa"/>
+                                    <constraint firstAttribute="height" constant="250" id="gcN-CH-h4l"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Candy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UxK-Vy-1eN">
-                                <rect key="frame" x="257" y="106" width="86" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r9-PF-xJv">
-                                <rect key="frame" x="257" y="496" width="99" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r9-PF-xJv">
+                                <rect key="frame" x="259" y="490" width="95" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Location">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gBy-9V-PmA" kind="show" id="aq1-Yb-Ufn"/>
+                                    <segue destination="gBy-9V-PmA" kind="show" identifier="showLocation" id="aq1-Yb-Ufn"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acu-li-Cgj">
+                                <rect key="frame" x="200.5" y="86" width="200" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="lEf-Uj-DLx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Sze-gy-BoP" secondAttribute="centerY" id="C3Y-kx-98x"/>
+                            <constraint firstAttribute="centerY" secondItem="acu-li-Cgj" secondAttribute="centerY" constant="199" id="I3N-k7-35q"/>
+                            <constraint firstAttribute="centerY" secondItem="0r9-PF-xJv" secondAttribute="centerY" constant="-211" id="ecl-ee-dil"/>
+                            <constraint firstAttribute="centerX" secondItem="acu-li-Cgj" secondAttribute="centerX" constant="-0.5" id="iqJ-by-6L6"/>
+                            <constraint firstAttribute="centerX" secondItem="Sze-gy-BoP" secondAttribute="centerX" id="mXX-Kh-NGf"/>
+                            <constraint firstAttribute="centerX" secondItem="0r9-PF-xJv" secondAttribute="centerX" constant="-6.5" id="rqm-gC-KW0"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="candyNameTextField" destination="acu-li-Cgj" id="gkv-fx-Wfx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eRG-We-Y5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -198,19 +239,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNE-Tj-U7P">
-                                <rect key="frame" x="221" y="475" width="158" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNE-Tj-U7P">
+                                <rect key="frame" x="229" y="469" width="141" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Add Location">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="TCk-7e-lo6" kind="show" id="ije-DF-USi"/>
+                                </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="1CJ-Eb-VV4">
-                                <rect key="frame" x="116" y="78" width="368" height="346"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gat-Jp-XoF">
+                                <rect key="frame" x="175" y="139" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="GC4-PN-Ag6"/>
+                                    <constraint firstAttribute="width" constant="250" id="pVy-Hk-ui6"/>
+                                </constraints>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="JNE-Tj-U7P" secondAttribute="centerX" id="Hlc-fb-cZN"/>
+                            <constraint firstAttribute="centerY" secondItem="gat-Jp-XoF" secondAttribute="centerY" constant="79.5" id="Uee-Pb-XVX"/>
+                            <constraint firstAttribute="centerX" secondItem="gat-Jp-XoF" secondAttribute="centerX" id="c5d-XF-Ukx"/>
+                            <constraint firstAttribute="centerY" secondItem="gat-Jp-XoF" secondAttribute="centerY" constant="35.5" id="cSy-et-LTV"/>
+                            <constraint firstAttribute="centerY" secondItem="JNE-Tj-U7P" secondAttribute="centerY" constant="-190" id="qBe-tF-gy8"/>
+                            <constraint firstAttribute="centerX" secondItem="gat-Jp-XoF" secondAttribute="centerX" constant="-23" id="zQb-fg-Twf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Uee-Pb-XVX"/>
+                                <exclude reference="zQb-fg-Twf"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="currentLocation" destination="gat-Jp-XoF" id="nFa-ie-GTi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKI-4z-7dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -240,10 +305,10 @@
             </objects>
             <point key="canvasLocation" x="3047" y="785"/>
         </scene>
-        <!--View Controller-->
+        <!--Candy Location View Controller-->
         <scene sceneID="jfC-w7-R7v">
             <objects>
-                <viewController id="gBy-9V-PmA" sceneMemberID="viewController">
+                <viewController id="gBy-9V-PmA" customClass="CandyLocationViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W8l-Fo-68H"/>
                         <viewControllerLayoutGuide type="bottom" id="tWg-8x-LBY"/>
@@ -251,11 +316,6 @@
                     <view key="view" contentMode="scaleToFill" id="t5K-HN-DR4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="UZn-px-3gR">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </mapView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
@@ -284,5 +344,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="dFT-1c-ASo"/>
+        <segue reference="ije-DF-USi"/>
     </inferredMetricsTieBreakers>
 </document>
