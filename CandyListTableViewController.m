@@ -61,11 +61,11 @@
         CandyViewController *candyViewController = [segue destinationViewController];
         NSIndexPath *selectedIndexPath = self.tableView.indexPathForSelectedRow;
         candyViewController.candy = self.candyList[selectedIndexPath.row];
-    } else if ([segue.identifier isEqualToString:@"addCandy"]) {
-        Candy *candy = [Candy new];
-        [self.candyList addObject:candy];
-        AddCandyViewController *addCandyViewController = [segue destinationViewController];
-        addCandyViewController.candy = candy;
+//    } else if ([segue.identifier isEqualToString:@"addCandy"]) {
+//        Candy *candy = [Candy new];
+//        [self.candyList addObject:candy];
+//        AddCandyViewController *addCandyViewController = [segue destinationViewController];
+//        addCandyViewController.candy = candy;
     }
 }
 

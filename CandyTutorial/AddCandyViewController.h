@@ -12,7 +12,6 @@
 
 @interface AddCandyViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     UIImagePickerController *photo1;
-    UIImagePickerController *photo2;
     UIImage *image;
     IBOutlet UIImageView *imageView;
 }
@@ -21,5 +20,6 @@
 - (IBAction)ChooseExisting;
 
 @property (nonatomic, strong) Candy *candy;
+@property (nonatomic, retain) UIImagePickerController *imgPicker;
 
 @end

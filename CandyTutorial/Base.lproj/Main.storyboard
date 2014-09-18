@@ -164,6 +164,7 @@
                     </view>
                     <connections>
                         <outlet property="candyNameTextField" destination="hVV-jd-6j9" id="rHh-oC-wfV"/>
+                        <outlet property="imageView" destination="e89-1j-f35" id="pqb-Zt-LsG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxA-jW-ffm" userLabel="First Responder" sceneMemberID="firstResponder"/>

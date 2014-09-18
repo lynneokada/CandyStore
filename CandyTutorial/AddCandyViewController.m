@@ -18,10 +18,15 @@
 @end
 
 @implementation AddCandyViewController
+@synthesize imgPicker;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.imgPicker = [[UIImagePickerController alloc] init];
+    self.imgPicker.allowsImageEditing = YES;
+    self.imgPicker.delegate = self;
+    self.imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -30,12 +35,13 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([segue.identifier isEqualToString:@"addCandyConfirmed"]) {
-//        Candy *candy = [Candy new];
-//        [CandyListTableViewController.candyList addObject:candy];
-//        AddCandyViewController *addCandyViewController = [segue destinationViewController];
-//        addCandyViewController.candy = candy;
-//    }
+    if ([segue.identifier isEqualToString:@"addCandyConfirmed"]) {
+        Candy *candy = [Candy new];
+        CandyViewController *candyViewController = [CandyViewController new];
+        CandyListTableViewController *candyListTableViewController = [segue destinationViewController];
+        [candyListTableViewController.candyList addObject:candy];
+        candyViewController.candy = candy;
+    }
     //else if ([segue.identifier isEqualToString:@"addLocation]) {
     //        AddLocationViewController *addLocationViewController = [segue destinationViewController];
     //        addLocationViewController.candy = self.candyList[-1];
@@ -61,19 +67,41 @@
     photo1.delegate = self;
     [photo1 setSourceType:UIImagePickerControllerSourceTypeCamera];
     [self presentViewController:photo1 animated:YES completion:NULL];
+    [photo1 reloadInputViews];
 }
+
+//- (IBAction)ChooseExisting {
+//    photo2 = [[UIImagePickerController alloc] init];
+//    photo2.delegate = self;
+//    [photo2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+//    [self presentViewController:photo1 animated:YES completion:NULL];
+//    //[photo2 reloadInputViews];
+//}
 
 - (IBAction)ChooseExisting {
-    photo2 = [[UIImagePickerController alloc] init];
-    photo2.delegate = self;
-    [photo2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-    [self presentViewController:photo1 animated:YES completion:NULL];
+    [self presentModalViewController:self.imgPicker animated:YES];
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-    image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    [imageView setImage:image];
-    [self dismissViewControllerAnimated:YES completion:NULL];
+//ASK BENJI
+//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+//    image = [info objectForKey:UIImagePickerControllerOriginalImage];
+//    [imageView setImage:image];
+//    [self dismissViewControllerAnimated:YES completion:NULL];
+//}
+
+
+//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+//    
+//    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+//    self->imageView.image = chosenImage;
+//    
+//    [picker dismissViewControllerAnimated:YES completion:NULL];
+//    
+//}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)img editingInfo:(NSDictionary *)editInfo {
+    [self->imageView setImage:img];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

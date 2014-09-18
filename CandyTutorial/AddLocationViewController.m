@@ -23,6 +23,8 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    //enable authorization?
+    
     //get coordinates
     CLLocationCoordinate2D showCurrentLocation = [userLocation coordinate];
     //zoom area
