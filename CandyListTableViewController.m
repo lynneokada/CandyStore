@@ -51,6 +51,7 @@
     
     if (self) {
         _candyList = [NSMutableArray array];
+        
     }
     
     return self;

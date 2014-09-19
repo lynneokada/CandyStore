@@ -35,24 +35,27 @@
 }
 
 - (IBAction)addButtonPressed:(UIButton *)sender {
+    AddCandyViewController *add = [AddCandyViewController new];
+    CandyListTableViewController *candyView = [CandyListTableViewController new];
+    Candy *candy = [Candy new];
+    [candyView.candyList addObject:candy];
+    add.candy = candy;
+    self.candy.candyName = self.candyNameTextField.text;
     [self.navigationController popToRootViewControllerAnimated:YES];
+    //NSLog(@"%lu", (unsigned long)candyListTableViewController.candyList.count);
 }
 
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"addCandyConfirmed"]) {
-        Candy *candy = [Candy new];
-        CandyViewController *candyViewController = [CandyViewController new];
-        CandyListTableViewController *candyListTableViewController = [segue destinationViewController];
-        [candyListTableViewController.candyList addObject:candy];
-        candyViewController.candy = candy;
-    }
-    //else if ([segue.identifier isEqualToString:@"addLocation]) {
-    //        AddLocationViewController *addLocationViewController = [segue destinationViewController];
-    //        addLocationViewController.candy = self.candyList[-1];
-    //                } else if ([segue.identifier isEqualToString:@"])
-    //    }
-}
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if ([segue.identifier isEqualToString:@"addCandyConfirmed"]) {
+//        Candy *candy = [Candy new];
+//        CandyListTableViewController *candyListTableViewController = [CandyListTableViewController new];
+//        CandyViewController *_candyViewController = [segue destinationViewController];
+//        [candyListTableViewController.candyList addObject:candy];
+//        _candyViewController.candy = candy;
+//        self.candy.candyName = self.candyNameTextField.text;
+//    }
+//}
 
 
 - (void)viewWillAppear:(BOOL)animated {

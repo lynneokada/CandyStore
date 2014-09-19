@@ -11,4 +11,5 @@
 
 @interface AddLocationViewController : UIViewController <MKMapViewDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *currentLocation;
+@property (nonatomic, strong) CLLocationManager *locationManager;
 @end

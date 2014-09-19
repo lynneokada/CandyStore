@@ -32,6 +32,9 @@
     //show location
     [self.currentLocation setRegion:zoomArea animated:YES];
 }
+- (IBAction)addLocationPressed:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
     return (toInterfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
