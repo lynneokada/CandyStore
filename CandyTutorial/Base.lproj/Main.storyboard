@@ -74,7 +74,7 @@
                                     <color key="titleShadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="FPT-Qo-Ser" kind="show" identifier="addCandyConfirmed" id="dFT-1c-ASo"/>
+                                    <action selector="addButtonPressed:" destination="TCk-7e-lo6" eventType="touchDown" id="7Os-5p-KHd"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hVV-jd-6j9">
@@ -344,7 +344,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="dFT-1c-ASo"/>
         <segue reference="ije-DF-USi"/>
     </inferredMetricsTieBreakers>
 </document>

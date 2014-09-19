@@ -34,6 +34,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)addButtonPressed:(UIButton *)sender {
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"addCandyConfirmed"]) {
         Candy *candy = [Candy new];
