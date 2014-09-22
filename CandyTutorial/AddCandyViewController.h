@@ -7,19 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@class Candy;
-
-@interface AddCandyViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@interface AddCandyViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate> {
+    //camera/photolibrary
     UIImagePickerController *photo1;
     UIImage *image;
     IBOutlet UIImageView *imageView;
+    
+    //location manager
+    CLLocationManager *locationManager;
 }
 
 - (IBAction)TakePhoto;
 - (IBAction)ChooseExisting;
 
-@property (nonatomic, strong) Candy *candy;
 @property (nonatomic, retain) UIImagePickerController *imgPicker;
+@property (nonatomic, strong) NSMutableArray *candyList;
 
 @end

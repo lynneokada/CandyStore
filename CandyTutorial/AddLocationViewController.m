@@ -14,26 +14,42 @@
 @end
 
 @implementation AddLocationViewController
+@synthesize mapView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.currentLocation.delegate = self;
-    [self.currentLocation setShowsUserLocation:YES];
+    trackPointsArray = [[NSMutableArray alloc] init];
+    locationManager = [[CLLocationManager alloc] init];
+    [locationManager requestWhenInUseAuthorization];
 }
 
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    //enable authorization?
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    //get latest location
+    CLLocation *currentLocation = [locations lastObject];
     
-    //get coordinates
-    CLLocationCoordinate2D showCurrentLocation = [userLocation coordinate];
-    //zoom area
-    MKCoordinateRegion zoomArea = MKCoordinateRegionMakeWithDistance(showCurrentLocation, 2000, 2000);
-    //show location
-    [self.currentLocation setRegion:zoomArea animated:YES];
+    //store location
+    [trackPointsArray addObject:currentLocation];
+    
+    NSLog(@"%@", trackPointsArray);
 }
+
 - (IBAction)addLocationPressed:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    //[self.navigationController popViewControllerAnimated:YES];
+    locationManager = [[CLLocationManager alloc] init];
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.distanceFilter = kCLDistanceFilterNone;
+    [locationManager startUpdatingLocation];
+    
+    mapView.delegate = self;
+    //show the user location
+    mapView.showsUserLocation = YES;
+}
+- (IBAction)no:(id)sender {
+    locationManager = [[CLLocationManager alloc] init];
+    [locationManager stopUpdatingLocation];
+    locationManager = nil;
 }
 
 - (BOOL) shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {

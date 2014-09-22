@@ -12,7 +12,9 @@
 #import "AddLocationViewController.h"
 #import "Candy.h"
 
-@interface AddCandyViewController ()
+@interface AddCandyViewController () {
+    Candy *_candyBeingAdded;
+}
 @property (weak, nonatomic) IBOutlet UITextField *candyNameTextField;
 
 @end
@@ -27,6 +29,7 @@
     self.imgPicker.allowsImageEditing = YES;
     self.imgPicker.delegate = self;
     self.imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    _candyBeingAdded = [Candy new];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,14 +38,13 @@
 }
 
 - (IBAction)addButtonPressed:(UIButton *)sender {
-    AddCandyViewController *add = [AddCandyViewController new];
-    CandyListTableViewController *candyView = [CandyListTableViewController new];
-    Candy *candy = [Candy new];
-    [candyView.candyList addObject:candy];
-    add.candy = candy;
-    self.candy.candyName = self.candyNameTextField.text;
+    [_candyList addObject:_candyBeingAdded];
+    _candyBeingAdded.candyName = self.candyNameTextField.text;
     [self.navigationController popToRootViewControllerAnimated:YES];
     //NSLog(@"%lu", (unsigned long)candyListTableViewController.candyList.count);
+}
+- (IBAction)findLocation:(UIButton *)sender {
+
 }
 
 
@@ -56,19 +58,6 @@
 //        self.candy.candyName = self.candyNameTextField.text;
 //    }
 //}
-
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    self.candyNameTextField.text = self.candy.candyName;
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    self.candy.candyName = self.candyNameTextField.text;
-}
 
 - (IBAction)TakePhoto {
     photo1 = [[UIImagePickerController alloc] init];
@@ -89,23 +78,6 @@
 - (IBAction)ChooseExisting {
     [self presentModalViewController:self.imgPicker animated:YES];
 }
-
-//ASK BENJI
-//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-//    image = [info objectForKey:UIImagePickerControllerOriginalImage];
-//    [imageView setImage:image];
-//    [self dismissViewControllerAnimated:YES completion:NULL];
-//}
-
-
-//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
-//    
-//    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
-//    self->imageView.image = chosenImage;
-//    
-//    [picker dismissViewControllerAnimated:YES completion:NULL];
-//    
-//}
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)img editingInfo:(NSDictionary *)editInfo {
     [self->imageView setImage:img];

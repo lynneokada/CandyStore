@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X3Y-4X-Woi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X3Y-4X-Woi">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -24,6 +24,7 @@
                                 </connections>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="FPT-Qo-Ser" id="Cd6-Xc-Wkw"/>
                             <outlet property="delegate" destination="FPT-Qo-Ser" id="4r1-47-rn5"/>
@@ -89,6 +90,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="findLocation:" destination="TCk-7e-lo6" eventType="touchUpInside" id="vz5-5i-hSu"/>
                                     <segue destination="dES-WA-PLW" kind="show" identifier="addLocation" id="RhC-Qz-bmS"/>
                                 </connections>
                             </button>
@@ -257,6 +259,15 @@
                                     <constraint firstAttribute="width" constant="250" id="pVy-Hk-ui6"/>
                                 </constraints>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkP-ij-YIt">
+                                <rect key="frame" x="282" y="518" width="46" height="30"/>
+                                <state key="normal" title="no">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="no:" destination="dES-WA-PLW" eventType="touchUpInside" id="d5n-5t-MIR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -275,7 +286,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="currentLocation" destination="gat-Jp-XoF" id="nFa-ie-GTi"/>
+                        <outlet property="mapView" destination="gat-Jp-XoF" id="d93-8a-wAF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKI-4z-7dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

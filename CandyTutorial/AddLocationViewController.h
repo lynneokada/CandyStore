@@ -8,8 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
 
-@interface AddLocationViewController : UIViewController <MKMapViewDelegate>
-@property (weak, nonatomic) IBOutlet MKMapView *currentLocation;
-@property (nonatomic, strong) CLLocationManager *locationManager;
+
+@interface AddLocationViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate> {
+    CLLocationManager *locationManager;
+    NSMutableArray *trackPointsArray;
+}
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+
 @end
