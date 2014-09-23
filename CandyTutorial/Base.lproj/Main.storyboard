@@ -90,8 +90,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="findLocation:" destination="TCk-7e-lo6" eventType="touchUpInside" id="vz5-5i-hSu"/>
-                                    <segue destination="dES-WA-PLW" kind="show" identifier="addLocation" id="RhC-Qz-bmS"/>
+                                    <action selector="findLocation:" destination="TCk-7e-lo6" eventType="touchUpInside" id="hGw-JJ-Ndm"/>
+                                    <segue destination="dES-WA-PLW" kind="show" id="Cmt-CG-v0S"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxL-zV-TAb">
@@ -240,25 +240,16 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="addLocationPressed:" destination="dES-WA-PLW" eventType="touchDown" id="aO1-xB-WtL"/>
+                                    <action selector="addLocation:" destination="dES-WA-PLW" eventType="touchUpInside" id="Rru-QV-LCf"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="gat-Jp-XoF">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gat-Jp-XoF">
                                 <rect key="frame" x="175" y="139" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="GC4-PN-Ag6"/>
                                     <constraint firstAttribute="width" constant="250" id="pVy-Hk-ui6"/>
                                 </constraints>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkP-ij-YIt">
-                                <rect key="frame" x="276" y="518" width="46" height="30"/>
-                                <state key="normal" title="cancel">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="no:" destination="dES-WA-PLW" eventType="touchUpInside" id="d5n-5t-MIR"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -277,7 +268,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="mapView" destination="gat-Jp-XoF" id="d93-8a-wAF"/>
+                        <outlet property="mapView" destination="gat-Jp-XoF" id="f6G-x4-Tpb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKI-4z-7dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>

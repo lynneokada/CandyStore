@@ -13,10 +13,6 @@
     //camera/photolibrary
     UIImagePickerController *photo1;
     UIImage *image;
-    
-    
-    //location manager
-    CLLocationManager *locationManager;
 }
 
 - (IBAction)TakePhoto;

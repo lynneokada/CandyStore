@@ -28,7 +28,6 @@
     
     self.imageView.frame = CGRectMake(0, 0, self.imageView.image.size.width, self.imageView.image.size.height);
     // Do any additional setup after loading the view.
-    
 }
 
 - (void)didReceiveMemoryWarning {

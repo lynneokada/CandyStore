@@ -38,7 +38,6 @@
     NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
 
     candyBeingAdded = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,7 +65,6 @@
 }
 
 - (IBAction)findLocation:(UIButton *)sender {
-
 }
 
 
@@ -82,12 +80,7 @@
 //}
 
 - (IBAction)TakePhoto {
-//    photo1 = [[UIImagePickerController alloc] init];
-//    photo1.delegate = self;
-//    [photo1 setSourceType:UIImagePickerControllerSourceTypeCamera];
-//    [self presentViewController:photo1 animated:YES completion:NULL];
-//    [photo1 reloadInputViews];
-    
+
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     picker.delegate = self;
     picker.allowsEditing = YES;
