@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CandyScrollViewController : UIViewController
+@interface CandyScrollViewController : UIViewController <UIScrollViewDelegate>
 
 @property (nonatomic, strong) UIImage* scrollImage;
 

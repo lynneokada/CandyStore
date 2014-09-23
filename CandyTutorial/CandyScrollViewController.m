@@ -8,7 +8,8 @@
 
 #import "CandyScrollViewController.h"
 
-@interface CandyScrollViewController () <UIScrollViewDelegate>
+@interface CandyScrollViewController () 
+
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *candyScrollView;
 

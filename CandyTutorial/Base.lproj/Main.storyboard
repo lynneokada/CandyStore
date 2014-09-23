@@ -195,15 +195,15 @@
                                     <segue destination="gBy-9V-PmA" kind="show" identifier="showLocation" id="aq1-Yb-Ufn"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVZ-Nw-N79">
+                                <rect key="frame" x="63" y="191" width="240" height="234"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sc-75-THW">
-                                <rect key="frame" x="285" y="116" width="42" height="21"/>
+                                <rect key="frame" x="162" y="114" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVZ-Nw-N79">
-                                <rect key="frame" x="52" y="196" width="240" height="234"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -212,8 +212,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="candyImageView" destination="jVZ-Nw-N79" id="TXf-lG-xjh"/>
                         <outlet property="candyLabel" destination="4sc-75-THW" id="62X-K0-bOh"/>
-                        <outlet property="imageView" destination="jVZ-Nw-N79" id="ne7-gG-xB7"/>
                         <segue destination="Ayy-MU-77b" kind="show" identifier="imageScroll" id="d3e-rS-FGt"/>
                     </connections>
                 </viewController>

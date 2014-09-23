@@ -11,8 +11,8 @@
 #import "Candy.h"
 
 @interface CandyViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UILabel *candyLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *candyImageView;
 
 @end
 
@@ -23,7 +23,8 @@
     // Do any additional setup after loading the view.
     
     _candyLabel.text = self.candy.name;
-    _imageView.image = [UIImage imageWithData:self.candy.image];
+    _candyImageView.image = [UIImage imageWithData:self.candy.image];
+    _candyImageView.userInteractionEnabled = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,16 +35,14 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"imageScroll"]) {
         CandyScrollViewController *candyScrollViewController = [segue destinationViewController];
-        candyScrollViewController.scrollImage = _imageView.image;
+        candyScrollViewController.scrollImage = _candyImageView.image;
     }
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    //ASK BENG
     UITouch *touch = [touches anyObject];
-    if ([touch view] == _imageView)
-    {
+    if ([touch view] == _candyImageView){
          NSLog(@"touchrecieved");
         [self performSegueWithIdentifier:@"imageScroll" sender:self];
     }
