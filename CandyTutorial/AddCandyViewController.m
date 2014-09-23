@@ -17,6 +17,8 @@
     Candy *candyBeingAdded;
 }
 @property (weak, nonatomic) IBOutlet UITextField *candyNameTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 
 @end
 
@@ -30,6 +32,8 @@
     self.imgPicker.allowsImageEditing = YES;
     self.imgPicker.delegate = self;
     self.imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    _candyNameTextField.delegate = self;
     
     NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
 
@@ -56,6 +60,9 @@
     if (error) {
         
     }
+    
+    candyBeingAdded.image = UIImagePNGRepresentation(self.imageView.image);
+    [(AppDelegate *)[UIApplication sharedApplication].delegate saveContext];
 }
 
 - (IBAction)findLocation:(UIButton *)sender {
@@ -75,11 +82,18 @@
 //}
 
 - (IBAction)TakePhoto {
-    photo1 = [[UIImagePickerController alloc] init];
-    photo1.delegate = self;
-    [photo1 setSourceType:UIImagePickerControllerSourceTypeCamera];
-    [self presentViewController:photo1 animated:YES completion:NULL];
-    [photo1 reloadInputViews];
+//    photo1 = [[UIImagePickerController alloc] init];
+//    photo1.delegate = self;
+//    [photo1 setSourceType:UIImagePickerControllerSourceTypeCamera];
+//    [self presentViewController:photo1 animated:YES completion:NULL];
+//    [photo1 reloadInputViews];
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
 }
 
 //- (IBAction)ChooseExisting {
@@ -91,16 +105,32 @@
 //}
 
 - (IBAction)ChooseExisting {
-    [self presentModalViewController:self.imgPicker animated:YES];
+    //[self presentModalViewController:self.imgPicker animated:YES];
+    
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = YES;
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    
+    [self presentViewController:picker animated:YES completion:NULL];
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)img editingInfo:(NSDictionary *)editInfo {
-    [self->imageView setImage:img];
-    [self dismissViewControllerAnimated:YES completion:nil];
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.imageView.image = chosenImage;
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
-    [self dismissViewControllerAnimated:YES completion:NULL];
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

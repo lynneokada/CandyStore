@@ -34,6 +34,8 @@
     // create a new fetch request
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entityDescription];
+    //delete the NSManagedObject
+    
     // create an error variable to pass to the execute method
     NSError *error;
     // retrieve results
@@ -93,6 +95,9 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     [self.candyList removeObjectAtIndex:indexPath.row];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    
+//    NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+//    [context deleteObject:<#(NSManagedObject *)#>]
 }
 
 /*

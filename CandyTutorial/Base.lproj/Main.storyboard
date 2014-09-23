@@ -82,9 +82,6 @@
                                 <rect key="frame" x="267" y="373" width="254" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="TCk-7e-lo6" id="zkq-pX-F0n"/>
-                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keK-oR-d3R">
                                 <rect key="frame" x="219" y="439" width="162" height="41"/>
@@ -168,8 +165,8 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="candyNameTextField" destination="hVV-jd-6j9" id="v6r-sz-dg8"/>
-                        <outlet property="imageView" destination="e89-1j-f35" id="pqb-Zt-LsG"/>
+                        <outlet property="candyNameTextField" destination="hVV-jd-6j9" id="rVz-57-7Cq"/>
+                        <outlet property="imageView" destination="e89-1j-f35" id="bB1-x0-aTN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxA-jW-ffm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -188,14 +185,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Sze-gy-BoP">
-                                <rect key="frame" x="175" y="175" width="250" height="250"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="Iyh-Gz-3Wa"/>
-                                    <constraint firstAttribute="height" constant="250" id="gcN-CH-h4l"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0r9-PF-xJv">
                                 <rect key="frame" x="259" y="490" width="95" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -206,27 +195,26 @@
                                     <segue destination="gBy-9V-PmA" kind="show" identifier="showLocation" id="aq1-Yb-Ufn"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="acu-li-Cgj">
-                                <rect key="frame" x="200.5" y="86" width="200" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="lEf-Uj-DLx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4sc-75-THW">
+                                <rect key="frame" x="285" y="116" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVZ-Nw-N79">
+                                <rect key="frame" x="52" y="196" width="240" height="234"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="Sze-gy-BoP" secondAttribute="centerY" id="C3Y-kx-98x"/>
-                            <constraint firstAttribute="centerY" secondItem="acu-li-Cgj" secondAttribute="centerY" constant="199" id="I3N-k7-35q"/>
                             <constraint firstAttribute="centerY" secondItem="0r9-PF-xJv" secondAttribute="centerY" constant="-211" id="ecl-ee-dil"/>
-                            <constraint firstAttribute="centerX" secondItem="acu-li-Cgj" secondAttribute="centerX" constant="-0.5" id="iqJ-by-6L6"/>
-                            <constraint firstAttribute="centerX" secondItem="Sze-gy-BoP" secondAttribute="centerX" id="mXX-Kh-NGf"/>
                             <constraint firstAttribute="centerX" secondItem="0r9-PF-xJv" secondAttribute="centerX" constant="-6.5" id="rqm-gC-KW0"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="candyNameTextField" destination="acu-li-Cgj" id="gkv-fx-Wfx"/>
+                        <outlet property="candyLabel" destination="4sc-75-THW" id="62X-K0-bOh"/>
+                        <outlet property="imageView" destination="jVZ-Nw-N79" id="ne7-gG-xB7"/>
+                        <segue destination="Ayy-MU-77b" kind="show" identifier="imageScroll" id="d3e-rS-FGt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eRG-We-Y5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -263,8 +251,8 @@
                                 </constraints>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkP-ij-YIt">
-                                <rect key="frame" x="282" y="518" width="46" height="30"/>
-                                <state key="normal" title="no">
+                                <rect key="frame" x="276" y="518" width="46" height="30"/>
+                                <state key="normal" title="cancel">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -296,10 +284,10 @@
             </objects>
             <point key="canvasLocation" x="3047" y="29"/>
         </scene>
-        <!--View Controller-->
+        <!--Candy Scroll View Controller-->
         <scene sceneID="MVf-Fq-s46">
             <objects>
-                <viewController id="Ayy-MU-77b" sceneMemberID="viewController">
+                <viewController id="Ayy-MU-77b" customClass="CandyScrollViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="p9L-mE-OGn"/>
                         <viewControllerLayoutGuide type="bottom" id="KEd-cL-WsH"/>
@@ -308,13 +296,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enF-g1-DWh">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Fb-PJ-mju">
+                                <rect key="frame" x="-20" y="-20" width="640" height="640"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m5p-za-lFi">
+                                        <rect key="frame" x="20" y="20" width="600" height="600"/>
+                                    </imageView>
+                                </subviews>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="candyScrollView" destination="1Fb-PJ-mju" id="u4O-lJ-RAW"/>
+                        <outlet property="imageView" destination="m5p-za-lFi" id="pMg-E6-XsI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UsK-qK-gZK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,7 +13,7 @@
     //camera/photolibrary
     UIImagePickerController *photo1;
     UIImage *image;
-    IBOutlet UIImageView *imageView;
+    
     
     //location manager
     CLLocationManager *locationManager;

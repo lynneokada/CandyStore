@@ -13,6 +13,7 @@
 		D261870C19CCF77000097773 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D261870B19CCF77000097773 /* CoreLocation.framework */; };
 		D290CC7719D00BAD00EF2DF0 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D290CC7619D00BAD00EF2DF0 /* CoreData.framework */; };
 		D290CC7D19D0E0AB00EF2DF0 /* Candy.m in Sources */ = {isa = PBXBuildFile; fileRef = D290CC7C19D0E0AB00EF2DF0 /* Candy.m */; };
+		D290CC8019D16A0C00EF2DF0 /* CandyScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D290CC7F19D16A0C00EF2DF0 /* CandyScrollViewController.m */; };
 		D2EB52D619C8E84500C4FFE4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB52D519C8E84500C4FFE4 /* main.m */; };
 		D2EB52D919C8E84500C4FFE4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EB52D819C8E84500C4FFE4 /* AppDelegate.m */; };
 		D2EB52DC19C8E84500C4FFE4 /* CandyTutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2EB52DA19C8E84500C4FFE4 /* CandyTutorial.xcdatamodeld */; };
@@ -45,6 +46,8 @@
 		D290CC7619D00BAD00EF2DF0 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		D290CC7B19D0E0AB00EF2DF0 /* Candy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Candy.h; path = ../Candy.h; sourceTree = "<group>"; };
 		D290CC7C19D0E0AB00EF2DF0 /* Candy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Candy.m; path = ../Candy.m; sourceTree = "<group>"; };
+		D290CC7E19D16A0C00EF2DF0 /* CandyScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CandyScrollViewController.h; sourceTree = "<group>"; };
+		D290CC7F19D16A0C00EF2DF0 /* CandyScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CandyScrollViewController.m; sourceTree = "<group>"; };
 		D2EB52D019C8E84500C4FFE4 /* CandyTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CandyTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2EB52D419C8E84500C4FFE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2EB52D519C8E84500C4FFE4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -116,6 +119,8 @@
 				D2EB52FD19C8E95400C4FFE4 /* CandyListTableViewController.m */,
 				D2EB530219C8F57C00C4FFE4 /* CandyViewController.h */,
 				D2EB530319C8F57C00C4FFE4 /* CandyViewController.m */,
+				D290CC7E19D16A0C00EF2DF0 /* CandyScrollViewController.h */,
+				D290CC7F19D16A0C00EF2DF0 /* CandyScrollViewController.m */,
 				D2EB530519C8FBE500C4FFE4 /* AddCandyViewController.h */,
 				D2EB530619C8FBE500C4FFE4 /* AddCandyViewController.m */,
 				D2178DB319CA024A00D29C63 /* AddLocationViewController.h */,
@@ -260,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2EB530419C8F57C00C4FFE4 /* CandyViewController.m in Sources */,
+				D290CC8019D16A0C00EF2DF0 /* CandyScrollViewController.m in Sources */,
 				D2EB52D919C8E84500C4FFE4 /* AppDelegate.m in Sources */,
 				D2EB52D619C8E84500C4FFE4 /* main.m in Sources */,
 				D2178DB819CA2B6A00D29C63 /* CandyLocationViewController.m in Sources */,
