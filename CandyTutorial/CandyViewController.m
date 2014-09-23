@@ -35,13 +35,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.candyNameTextField.text = self.candy.candyName;
+    self.candyNameTextField.text = self.candy.name;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
-    self.candy.candyName = self.candyNameTextField.text;
+    self.candy.name = self.candyNameTextField.text;
 }
 /*
 #pragma mark - Navigation

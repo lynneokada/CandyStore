@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CandyListTableViewController : UITableViewController
+@interface CandyListTableViewController : UITableViewController 
 
 @property (nonatomic, strong) NSMutableArray *candyList;
 

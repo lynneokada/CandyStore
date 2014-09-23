@@ -10,6 +10,7 @@
 #import "CandyViewController.h"
 #import "AddCandyViewController.h"
 #import "Candy.h"
+#import "AppDelegate.h"
 
 @interface CandyListTableViewController ()
 
@@ -25,6 +26,21 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // get access to the managed object context
+    NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    // get entity description for entity we are selecting
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Candy" inManagedObjectContext:context];
+    // create a new fetch request
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entityDescription];
+    // create an error variable to pass to the execute method
+    NSError *error;
+    // retrieve results
+    _candyList = [[context executeFetchRequest:request error:&error] mutableCopy];
+    if (_candyList == nil) {
+        //error handling, e.g. display error to user
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,7 +57,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CandyCells" forIndexPath:indexPath];
     
-    cell.textLabel.text = [self.candyList[indexPath.row] candyName];
+    cell.textLabel.text = [self.candyList[indexPath.row] name];
     
     return cell;
 }
@@ -78,6 +94,7 @@
     [self.candyList removeObjectAtIndex:indexPath.row];
     [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
+
 /*
  - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];

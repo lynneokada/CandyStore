@@ -11,9 +11,10 @@
 #import "CandyListTableViewController.h"
 #import "AddLocationViewController.h"
 #import "Candy.h"
+#import "AppDelegate.h"
 
 @interface AddCandyViewController () {
-    Candy *_candyBeingAdded;
+    Candy *candyBeingAdded;
 }
 @property (weak, nonatomic) IBOutlet UITextField *candyNameTextField;
 
@@ -29,7 +30,11 @@
     self.imgPicker.allowsImageEditing = YES;
     self.imgPicker.delegate = self;
     self.imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    _candyBeingAdded = [Candy new];
+    
+    NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+
+    candyBeingAdded = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,11 +43,21 @@
 }
 
 - (IBAction)addButtonPressed:(UIButton *)sender {
-    [_candyList addObject:_candyBeingAdded];
-    _candyBeingAdded.candyName = self.candyNameTextField.text;
+    [_candyList addObject:candyBeingAdded];
+    candyBeingAdded.name = self.candyNameTextField.text;
     [self.navigationController popToRootViewControllerAnimated:YES];
-    //NSLog(@"%lu", (unsigned long)candyListTableViewController.candyList.count);
+    
+    //coredata
+    // get access to the managed object context
+    candyBeingAdded.name = self.candyNameTextField.text;
+    NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    NSError *error = nil;
+    [context save:&error];
+    if (error) {
+        
+    }
 }
+
 - (IBAction)findLocation:(UIButton *)sender {
 
 }
@@ -86,6 +101,11 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 /*
  #pragma mark - Navigation
