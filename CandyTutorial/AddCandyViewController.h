@@ -9,11 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface AddCandyViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDelegate, UITextFieldDelegate> {
-    //camera/photolibrary
-    UIImagePickerController *photo1;
-    UIImage *image;
-}
+@interface AddCandyViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDelegate, UITextFieldDelegate> 
 
 - (IBAction)TakePhoto;
 - (IBAction)ChooseExisting;

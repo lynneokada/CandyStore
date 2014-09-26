@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+#define METERS_PER_MILE 1609.344
 
-@interface CandyLocationViewController : UIViewController
+@interface CandyLocationViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
 
 @end

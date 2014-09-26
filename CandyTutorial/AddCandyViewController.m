@@ -15,6 +15,8 @@
 
 @interface AddCandyViewController () {
     Candy *candyBeingAdded;
+    NSNumber *lati;
+    NSNumber *longi;
 }
 @property (weak, nonatomic) IBOutlet UITextField *candyNameTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -23,6 +25,9 @@
 @end
 
 @implementation AddCandyViewController
+{
+    UIImage *image;
+}
 @synthesize imgPicker;
 
 - (void)viewDidLoad {
@@ -53,6 +58,8 @@
     //coredata
     // get access to the managed object context
     candyBeingAdded.name = self.candyNameTextField.text;
+    candyBeingAdded.longitude = longi;
+    candyBeingAdded.latitude = lati;
     NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
     NSError *error = nil;
     [context save:&error];
@@ -62,9 +69,11 @@
     
     candyBeingAdded.image = UIImagePNGRepresentation(self.imageView.image);
     [(AppDelegate *)[UIApplication sharedApplication].delegate saveContext];
+    NSLog(@"lati:%@, longi:%@",lati,longi);
 }
 
 - (IBAction)findLocation:(UIButton *)sender {
+    
 }
 
 
@@ -114,7 +123,6 @@
     self.imageView.image = chosenImage;
     
     [picker dismissViewControllerAnimated:YES completion:NULL];
-    
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -122,6 +130,7 @@
     [picker dismissViewControllerAnimated:YES completion:NULL];
     
 }
+
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     return YES;
 }
