@@ -182,7 +182,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxA-jW-ffm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2123" y="29"/>
+            <point key="canvasLocation" x="2197" y="-102"/>
         </scene>
         <!--Candy View Controller-->
         <scene sceneID="8hm-Vv-cHm">
@@ -306,8 +306,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="candyScrollView" destination="1Fb-PJ-mju" id="u4O-lJ-RAW"/>
-                        <outlet property="imageView" destination="m5p-za-lFi" id="pMg-E6-XsI"/>
+                        <outlet property="candyScrollView" destination="1Fb-PJ-mju" id="p8X-yz-w3G"/>
+                        <outlet property="imageView" destination="m5p-za-lFi" id="i9Z-y1-P8l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UsK-qK-gZK" userLabel="First Responder" sceneMemberID="firstResponder"/>

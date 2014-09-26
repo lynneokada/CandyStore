@@ -11,6 +11,9 @@
 
 @interface AddLocationViewController () {
     CLLocationManager *locationManager;
+    double longitude;
+    double latitude;
+    AddCandyViewController *addCandyViewController;
 }
 
 
@@ -64,9 +67,12 @@
 }
 
 - (IBAction)addLocation:(UIButton *)sender {
-    _latitude = locationManager.location.coordinate.latitude;
-    _longitude = locationManager.location.coordinate.longitude;
-    NSLog(@"lat %f, long %f", _latitude, _longitude);
+    latitude = locationManager.location.coordinate.latitude;
+    longitude = locationManager.location.coordinate.longitude;
+    addCandyViewController.lati = [NSNumber numberWithDouble:latitude];
+    addCandyViewController.longi = [NSNumber numberWithDouble:longitude];
+    
+    NSLog(@"lat %f, long %f", latitude, longitude);
     
     NSArray *array = [self.navigationController viewControllers];
     [self.navigationController popToViewController:[array objectAtIndex:1] animated:YES];

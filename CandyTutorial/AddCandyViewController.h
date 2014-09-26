@@ -16,5 +16,7 @@
 
 @property (nonatomic, retain) UIImagePickerController *imgPicker;
 @property (nonatomic, strong) NSMutableArray *candyList;
+@property (nonatomic, assign) NSNumber *lati;
+@property (nonatomic, assign) NSNumber *longi;
 
 @end

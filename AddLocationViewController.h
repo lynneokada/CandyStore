@@ -14,7 +14,5 @@
 @interface AddLocationViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
-@property (nonatomic, assign) double longitude;
-@property (nonatomic, assign) double latitude;
 
 @end

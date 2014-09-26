@@ -21,7 +21,7 @@
     self.textField.delegate = self;
     self.chatList = [NSMutableArray new];
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.2.23:3000/candy"];
+    NSURL *url = [NSURL URLWithString:@"http://10.0.32.225:3000/candy"];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
     [request setHTTPMethod:@"GET"];
@@ -95,7 +95,7 @@
     //    [self.tableView reloadData];
     self.textField.text = @"";
     
-    NSURL *url = [NSURL URLWithString:@"http://192.168.2.23:3000/candy"];
+    NSURL *url = [NSURL URLWithString:@"http://10.0.32.225:3000/candy"];
     
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
     [request setHTTPMethod:@"POST"];
@@ -115,7 +115,7 @@
             //            NSArray *downloadedJSON = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSLog(@"uploaded");
             
-            NSURL *url = [NSURL URLWithString:@"http://192.168.2.23:3000/candy"];
+            NSURL *url = [NSURL URLWithString:@"http://10.0.32.225:3000/candy"];
             
             NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
             [request setHTTPMethod:@"GET"];

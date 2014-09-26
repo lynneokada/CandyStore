@@ -15,8 +15,7 @@
 
 @interface AddCandyViewController () {
     Candy *candyBeingAdded;
-    NSNumber *lati;
-    NSNumber *longi;
+
 }
 @property (weak, nonatomic) IBOutlet UITextField *candyNameTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
@@ -58,8 +57,10 @@
     //coredata
     // get access to the managed object context
     candyBeingAdded.name = self.candyNameTextField.text;
-    candyBeingAdded.longitude = longi;
-    candyBeingAdded.latitude = lati;
+    
+    candyBeingAdded.longitude = self.longi;
+    candyBeingAdded.latitude = self.lati;
+    
     NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
     NSError *error = nil;
     [context save:&error];
@@ -69,7 +70,7 @@
     
     candyBeingAdded.image = UIImagePNGRepresentation(self.imageView.image);
     [(AppDelegate *)[UIApplication sharedApplication].delegate saveContext];
-    NSLog(@"lati:%@, longi:%@",lati,longi);
+    NSLog(@"lati:%@, longi:%@",self.lati,self.longi);
 }
 
 - (IBAction)findLocation:(UIButton *)sender {

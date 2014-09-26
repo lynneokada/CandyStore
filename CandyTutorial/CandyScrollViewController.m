@@ -22,12 +22,18 @@
     [super viewDidLoad];
     
     self.candyScrollView.delegate = self;
+    
+    //scrollView size equals image size
     self.candyScrollView.contentSize = self.imageView.image.size;
     
+    //scrollImage equals image
     self.imageView.image = self.scrollImage;
     
-    self.imageView.frame = CGRectMake(0, 0, self.imageView.image.size.width, self.imageView.image.size.height);
-    // Do any additional setup after loading the view.
+    self.candyScrollView.minimumZoomScale = self.candyScrollView.frame.size.width / self.candyScrollView.frame.size.width;
+    self.candyScrollView.maximumZoomScale = 2.0;
+    [self.candyScrollView setZoomScale:self.candyScrollView.minimumZoomScale];
+    
+    //self.imageView.frame = CGRectMake(0, 0, self.imageView.image.size.width, self.imageView.image.size.height);
 }
 
 - (void)didReceiveMemoryWarning {
