@@ -38,7 +38,7 @@
     NSLog(@"%f,%f", zoomLocation.latitude,zoomLocation.longitude);
     MKCoordinateRegion zoomRegion = MKCoordinateRegionMakeWithDistance(candyLocation, 2000, 2000);
     [self.mapView setRegion:zoomRegion animated:YES];
-    [mapView setCenterCoordinate:candyLocation];
+    [self.mapView setCenterCoordinate:candyLocation];
 }
 //
 //- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
