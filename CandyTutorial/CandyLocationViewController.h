@@ -16,7 +16,7 @@
 @interface CandyLocationViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, strong) Candy *candy;
-@property (nonatomic, assign) double inputLongitude;
-@property (nonatomic, assign) double inputLatitude;
+//@property (nonatomic, assign) double inputLongitude;
+//@property (nonatomic, assign) double inputLatitude;
 
 @end

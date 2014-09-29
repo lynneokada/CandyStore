@@ -13,7 +13,7 @@
     CLLocationManager *locationManager;
     double longitude;
     double latitude;
-    AddCandyViewController *addCandyViewController;
+    AddCandyViewController* addCandyViewController;
 }
 
 
@@ -50,7 +50,6 @@
     MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
     // 4
     [_mapView setRegion:adjustedRegion animated:YES];
-
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
@@ -80,16 +79,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)addLocation:(UIButton *)sender {
-    latitude = locationManager.location.coordinate.latitude;
-    longitude = locationManager.location.coordinate.longitude;
-    addCandyViewController.addLatitude = [NSNumber numberWithDouble:latitude];
-    addCandyViewController.addLongitude = [NSNumber numberWithDouble:longitude];
-    
-    NSLog(@"lat %f, long %f", latitude, longitude);
-    
-    NSArray *array = [self.navigationController viewControllers];
-    [self.navigationController popToViewController:[array objectAtIndex:1] animated:YES];
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    AddCandyViewController *addCandyViewController = [segue destinationViewController];
+    if ([segue.identifier isEqualToString:@"locationAdded"]) {
+        latitude = locationManager.location.coordinate.latitude;
+        longitude = locationManager.location.coordinate.longitude;
+        //    addCandyViewController.addLatitude = [NSNumber numberWithDouble:latitude];
+        //    addCandyViewController.addLongitude = [NSNumber numberWithDouble:longitude];
+        
+        if (self.delegate) {
+            [self.delegate locationFoundWithLatitude:latitude andLongitude:longitude];
+            NSLog(@"lat %f, long %f", latitude, longitude);
+            
+        }
+    }
 }
 
 /*

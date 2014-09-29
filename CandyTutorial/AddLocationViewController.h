@@ -9,11 +9,17 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import "AddCandyViewController.h"
 #define METERS_PER_MILE 1609.344
+
+@protocol AddLocationViewControllerDelegate <NSObject>
+-(void) locationFoundWithLatitude:(float)latitude andLongitude:(float)longitude;
+
+@end
 
 @interface AddLocationViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (weak, nonatomic) id <AddLocationViewControllerDelegate> delegate;
+
 
 @end

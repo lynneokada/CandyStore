@@ -37,6 +37,9 @@
     self.imgPicker.delegate = self;
     self.imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
+    self.addLatitude = @0;
+    self.addLongitude = @0;
+    
     _candyNameTextField.delegate = self;
     
     NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
@@ -50,19 +53,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)unwindToAddCandyViewController:(UIStoryboardSegue *)unwindSegue {
+
+}
+
 - (IBAction)addButtonPressed:(UIButton *)sender {
     [_candyList addObject:candyBeingAdded];
     candyBeingAdded.name = self.candyNameTextField.text;
+    candyBeingAdded.latitude = self.addLatitude;
+    candyBeingAdded.longitude = self.addLongitude;
+    
     [self.navigationController popToRootViewControllerAnimated:YES];
     
     //coredata
     // get access to the managed object context
-    candyBeingAdded.name = self.candyNameTextField.text;
-    
-    candyBeingAdded.latitude = self.addLatitude;
-    candyBeingAdded.longitude = self.addLongitude;
     
     NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
+    
     NSError *error = nil;
     [context save:&error];
     if (error) {
@@ -74,8 +81,9 @@
     NSLog(@"lati:%@, longi:%@",self.addLatitude,self.addLongitude);
 }
 
-- (IBAction)findLocation:(UIButton *)sender {
-    
+- (void)locationFoundWithLatitude:(float)latitude andLongitude:(float)longitude {
+    self.addLatitude = @(latitude);
+    self.addLongitude = @(longitude);
 }
 
 - (IBAction)TakePhoto {
@@ -121,14 +129,13 @@
     [textField resignFirstResponder];
     return YES;
 }
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"findLocation"]) {
+        AddLocationViewController *addLocationViewController = [segue destinationViewController];
+        addLocationViewController.delegate = self;
+    }
  }
- */
+
 
 @end

@@ -8,15 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "AddLocationViewController.h"
 
-@interface AddCandyViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDelegate, UITextFieldDelegate> 
+@interface AddCandyViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, UITableViewDelegate, UITableViewDelegate, UITextFieldDelegate, AddLocationViewControllerDelegate>
 
 - (IBAction)TakePhoto;
 - (IBAction)ChooseExisting;
 
 @property (nonatomic, retain) UIImagePickerController *imgPicker;
 @property (nonatomic, strong) NSMutableArray *candyList;
-@property (nonatomic, assign) NSNumber *addLatitude;
-@property (nonatomic, assign) NSNumber *addLongitude;
+@property (nonatomic, strong) NSNumber *addLatitude;
+@property (nonatomic, strong) NSNumber *addLongitude;
 
 @end

@@ -117,8 +117,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="findLocation:" destination="TCk-7e-lo6" eventType="touchUpInside" id="hGw-JJ-Ndm"/>
-                                    <segue destination="dES-WA-PLW" kind="show" id="Cmt-CG-v0S"/>
+                                    <segue destination="dES-WA-PLW" kind="show" identifier="findLocation" id="Cmt-CG-v0S"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uxL-zV-TAb">
@@ -240,16 +239,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNE-Tj-U7P">
-                                <rect key="frame" x="229" y="469" width="141" height="41"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Add Location">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="addLocation:" destination="dES-WA-PLW" eventType="touchUpInside" id="Rru-QV-LCf"/>
-                                </connections>
-                            </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gat-Jp-XoF">
                                 <rect key="frame" x="175" y="100" width="250" height="250"/>
                                 <constraints>
@@ -257,6 +246,16 @@
                                     <constraint firstAttribute="width" constant="250" id="pVy-Hk-ui6"/>
                                 </constraints>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JNE-Tj-U7P">
+                                <rect key="frame" x="230" y="425" width="141" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Add Location">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="yd8-xx-bjI" kind="unwind" identifier="locationAdded" unwindAction="unwindToAddCandyViewController:" id="aNx-RF-U7V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -279,8 +278,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKI-4z-7dJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="yd8-xx-bjI" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2841" y="29"/>
+            <point key="canvasLocation" x="2981" y="-102"/>
         </scene>
         <!--Candy Scroll View Controller-->
         <scene sceneID="MVf-Fq-s46">

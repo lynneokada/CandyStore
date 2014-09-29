@@ -38,10 +38,9 @@
     if ([segue.identifier isEqualToString:@"imageScroll"]) {
         CandyScrollViewController *candyScrollViewController = [segue destinationViewController];
         candyScrollViewController.scrollImage = _candyImageView.image;
-//    } else if ([segue.identifier isEqualToString:@"showLocation"]) {
-//        CandyLocationViewController *candyLocationViewController = [segue destinationViewController];
-//        candyLocationViewController.inputLatitude = self.candy.latitude;
-//        candyLocationViewController.inputLongitude = self.candy.longitude;
+    } else if ([segue.identifier isEqualToString:@"showLocation"]) {
+        CandyLocationViewController *candyLocationViewController = [segue destinationViewController];
+        candyLocationViewController.candy = self.candy;
     }
 }
 
