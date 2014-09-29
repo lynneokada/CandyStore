@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "AddCandyViewController.h"
+#define METERS_PER_MILE 1609.344
 
 @interface AddLocationViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 

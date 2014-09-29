@@ -42,6 +42,7 @@
     NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
 
     candyBeingAdded = [NSEntityDescription insertNewObjectForEntityForName:@"Candy" inManagedObjectContext:context];
+    NSLog(@"%@, %@",self.addLatitude,self.addLongitude);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,8 +59,8 @@
     // get access to the managed object context
     candyBeingAdded.name = self.candyNameTextField.text;
     
-    candyBeingAdded.longitude = self.longi;
-    candyBeingAdded.latitude = self.lati;
+    candyBeingAdded.latitude = self.addLatitude;
+    candyBeingAdded.longitude = self.addLongitude;
     
     NSManagedObjectContext *context = ((AppDelegate *)[UIApplication sharedApplication].delegate).managedObjectContext;
     NSError *error = nil;
@@ -70,24 +71,12 @@
     
     candyBeingAdded.image = UIImagePNGRepresentation(self.imageView.image);
     [(AppDelegate *)[UIApplication sharedApplication].delegate saveContext];
-    NSLog(@"lati:%@, longi:%@",self.lati,self.longi);
+    NSLog(@"lati:%@, longi:%@",self.addLatitude,self.addLongitude);
 }
 
 - (IBAction)findLocation:(UIButton *)sender {
     
 }
-
-
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    if ([segue.identifier isEqualToString:@"addCandyConfirmed"]) {
-//        Candy *candy = [Candy new];
-//        CandyListTableViewController *candyListTableViewController = [CandyListTableViewController new];
-//        CandyViewController *_candyViewController = [segue destinationViewController];
-//        [candyListTableViewController.candyList addObject:candy];
-//        _candyViewController.candy = candy;
-//        self.candy.candyName = self.candyNameTextField.text;
-//    }
-//}
 
 - (IBAction)TakePhoto {
 
@@ -98,14 +87,6 @@
     
     [self presentViewController:picker animated:YES completion:NULL];
 }
-
-//- (IBAction)ChooseExisting {
-//    photo2 = [[UIImagePickerController alloc] init];
-//    photo2.delegate = self;
-//    [photo2 setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-//    [self presentViewController:photo1 animated:YES completion:NULL];
-//    //[photo2 reloadInputViews];
-//}
 
 - (IBAction)ChooseExisting {
     //[self presentModalViewController:self.imgPicker animated:YES];

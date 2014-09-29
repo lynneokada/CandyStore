@@ -16,7 +16,7 @@
 
 @property (nonatomic, retain) UIImagePickerController *imgPicker;
 @property (nonatomic, strong) NSMutableArray *candyList;
-@property (nonatomic, assign) NSNumber *lati;
-@property (nonatomic, assign) NSNumber *longi;
+@property (nonatomic, assign) NSNumber *addLatitude;
+@property (nonatomic, assign) NSNumber *addLongitude;
 
 @end

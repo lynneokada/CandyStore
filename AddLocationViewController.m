@@ -37,6 +37,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.mapView.showsUserLocation = YES;
+    self.mapView.delegate = self;
+    
+    CLLocationCoordinate2D zoomLocation;
+    zoomLocation.latitude = latitude;
+    zoomLocation.longitude = longitude;
+    
+    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.11*METERS_PER_MILE, 0.11*METERS_PER_MILE);
+    // 3
+    MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
+    // 4
+    [_mapView setRegion:adjustedRegion animated:YES];
+
 }
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
@@ -69,8 +83,8 @@
 - (IBAction)addLocation:(UIButton *)sender {
     latitude = locationManager.location.coordinate.latitude;
     longitude = locationManager.location.coordinate.longitude;
-    addCandyViewController.lati = [NSNumber numberWithDouble:latitude];
-    addCandyViewController.longi = [NSNumber numberWithDouble:longitude];
+    addCandyViewController.addLatitude = [NSNumber numberWithDouble:latitude];
+    addCandyViewController.addLongitude = [NSNumber numberWithDouble:longitude];
     
     NSLog(@"lat %f, long %f", latitude, longitude);
     

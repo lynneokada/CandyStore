@@ -7,6 +7,7 @@
 //
 
 #import "CandyLocationViewController.h"
+#import "Candy.h"
 
 @interface CandyLocationViewController () {
     CLLocationManager *locationManager;
@@ -17,15 +18,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.mapView.showsUserLocation = YES;
+    self.mapView.delegate = self;
     
     CLLocationCoordinate2D zoomLocation;
-//    zoomLocation.latitude = ;
-//    zoomLocation.longitude = ;
-    
+    zoomLocation.latitude = self.inputLatitude;
+    zoomLocation.longitude = self.inputLongitude;
+
     MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.11*METERS_PER_MILE, 0.11*METERS_PER_MILE);
-    // 3
+    
     MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
-    // 4
+    
     [_mapView setRegion:adjustedRegion animated:YES];
     // Do any additional setup after loading the view.
 }

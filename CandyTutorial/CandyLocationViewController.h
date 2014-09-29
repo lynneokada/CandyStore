@@ -11,7 +11,12 @@
 #import <CoreLocation/CoreLocation.h>
 #define METERS_PER_MILE 1609.344
 
+@class Candy;
+
 @interface CandyLocationViewController : UIViewController <MKMapViewDelegate, CLLocationManagerDelegate>
 @property (weak, nonatomic) IBOutlet MKMapView *mapView;
+@property (nonatomic, strong) Candy *candy;
+@property (nonatomic, assign) double inputLongitude;
+@property (nonatomic, assign) double inputLatitude;
 
 @end

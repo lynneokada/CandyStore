@@ -8,11 +8,13 @@
 
 #import "CandyScrollViewController.h"
 #import "CandyViewController.h"
+#import "CandyLocationViewController.h"
 #import "Candy.h"
 
 @interface CandyViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *candyLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *candyImageView;
+
 
 @end
 
@@ -36,6 +38,10 @@
     if ([segue.identifier isEqualToString:@"imageScroll"]) {
         CandyScrollViewController *candyScrollViewController = [segue destinationViewController];
         candyScrollViewController.scrollImage = _candyImageView.image;
+//    } else if ([segue.identifier isEqualToString:@"showLocation"]) {
+//        CandyLocationViewController *candyLocationViewController = [segue destinationViewController];
+//        candyLocationViewController.inputLatitude = self.candy.latitude;
+//        candyLocationViewController.inputLongitude = self.candy.longitude;
     }
 }
 
